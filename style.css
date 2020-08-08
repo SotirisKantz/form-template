@@ -1,0 +1,22 @@
+h1 {
+    color: tomato;
+    font-size: 40px;
+    display: block;
+} 
+
+.col-form-label {
+    color: brown;
+}
+
+#MessageLabel {
+    color: darkblue;
+}
+
+#CheckboxLabel {
+    color: black;
+}
+
+/* to break line in modal when it goes off limits */
+.modal-body p {
+    word-wrap: break-all;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Template</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="icon" href="data:;base64,=">
+
+</head>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h1>Form Template</h1>  <!-- Form's title-->
+            </div>      
+        </div>
+        <br>
+        <br>
+
+
+        <!-- Modal (Called when form's button is clicked) -->
+        <!-- Values are gained through myFunction in modal_form.js -->
+        <div id="ResultModal" class="modal" role="dialog">
+            <div class="modal-dialog modal-md" role="content">
+                <div class="modal-content">
+                    <!-- Modal title --> 
+                    <div class="modal-header">
+                        <h2 class="modal-title">Results of the form</h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" id="ModalResults">
+                        <!-- First Name -->
+                        <div class="row">
+                            <h4 class="col-12 col-sm-6 col-form-label">First Name : </h4>
+                            <div class="col-12 col-sm-6" id="ResultFirstName"></div>
+                            <hr/>
+                        </div>
+                        <!-- Last Name -->
+                        <div class="row">
+                            <h4 class="col-12 col-sm-6 col-form-label">Last Name : </h4>
+                            <div class="col-12 col-sm-6" id="ResultLastName"></div>
+                            <hr />
+                        </div>
+                        <!-- Email -->
+                        <div class="row"><!-- form (calls myFunction onclick in button) -->
+                            <h4 class="col-12 col-sm-6 col-form-label">Email : </h4>
+                            <div class="col-12 col-sm-6" id="ResultEmail"></div>
+                            <hr />
+                        </div>
+                        <!-- checkbox Privacy Policy -->
+                        <div class="row">
+                            <h4 class="col-12 col-sm-6 col-form-label">Approve : </h4>
+                            <div class="col-12 col-sm-6" id="ResultApprove"></div>
+                            <hr />
+                        </div>
+                        <!-- Message -->
+                        <div class="row">
+                            <h4 class="col-12 col-sm-6 col-form-label">Message : </h4>
+                        </div>
+                        <div class="row">
+                            <p class="col-12" id="ResultMessage"></p>
+                            <hr />
+                        </div>
+                    </div>
+                    <!--button -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- form (calls myFunction onclick in button) -->
+        <form> 
+            <!-- First Name -->
+            <div class="row">
+                <label for="FirstName" class="col-12 col-sm-3 col-form-label" >First Name</label>
+                <div class="col-12 col-sm-9">
+                    <input type="text" id="FirstName" class="form-control TextText" name="FirstName" placeholder="First Name">
+                </div>  
+            </div>
+            <br>
+            <!-- Last Name -->
+            <div class="row">
+                <label for="LastName" class="col-12 col-sm-3 col-form-label">Last Name</label>
+                <div class="col-12 col-sm-9">
+                    <input type="text" id="LastName" class="form-control TextText" name="LastName" placeholder="Last Name">
+                </div>
+            </div>
+            <br>
+            <!-- Email -->
+            <div class="row">
+                <label for="Email" class="col-12 col-sm-3 col-form-label">Email Address</label>
+                <div class="col-12 col-sm-9">
+                    <input type="email" class="form-control TextText" id="Email" placeholder="email@gmail.com">
+                </div>
+            </div>
+            <br>
+            <!-- Message -->
+            <div class="row">
+                <label for="Message" id="MessageLabel" class="col-12 offset-sm-1">Please enter your message</label>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-10 offset-sm-1">
+                    <textarea  class="form-control" id="Message" name="Message" rows="5"></textarea>
+                </div>
+            </div>
+            <!-- checkbox Privacy Policy -->
+            <div class="row">
+                <div class="col-12 offset-sm-1">
+                    <input type="checkbox" name="Approve" id="Approve" value="">
+                    <label for="Approve" id="CheckboxLabel">I have read and agree to the Privacy Policy</label>
+                </div>
+            </div>
+            <br>
+            <!--button calls myFunction onclick-->
+            <div class="row">
+                <div class="col-12 offset-sm-1">
+                    <button type="button" onclick="myFunction()" data-toggle="modal" data-target="#ResultModal" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script src="./modal_form.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>    
+</body>
+</html>
